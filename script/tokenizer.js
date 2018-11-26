@@ -1,4 +1,4 @@
-class Tokenize {
+class Tokenizer {
     constructor() {
         this.wholeDataQueue = [];
     }
@@ -50,4 +50,4 @@ class Tokenize {
     }
 }
 
-module.exports = Tokenize;
+module.exports = Tokenizer;

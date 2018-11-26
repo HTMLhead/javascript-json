@@ -1,7 +1,7 @@
 const JSONData = require('./jsonData.js');
 const ErrorCheck = require('./errorCheck.js');
-const Analyze = require('./analyze.js');
-const Tokenize = require('./tokenize.js')
+const Analyzer = require('./analyzer.js');
+const Tokenizer = require('./tokenizer.js')
 
 const sentence = "[1,{key:[2,{a:'a'},]}]".replace(/ /gi, '')
 
@@ -10,11 +10,11 @@ const print = function printJSONData(JSONData) {
 }
 
 const errorCheck = new ErrorCheck(sentence)
-const tokenize = new Tokenize(sentence)
-const tokenizedDataArr = tokenize.getWholeDataQueue(sentence)
-if (errorCheck.checkAllData(tokenizedDataArr)) {
-    const analyze = new Analyze(tokenizedDataArr, errorCheck)
-    const jsonData = analyze.queue()
+const tokenizer = new Tokenizer(sentence)
+const tokenizerdDataArr = tokenizer.getWholeDataQueue(sentence)
+if (errorCheck.checkAllData(tokenizerdDataArr)) {
+    const analyzer = new Analyzer(tokenizerdDataArr, errorCheck)
+    const jsonData = analyzer.queue()
     print(jsonData)
 }
 
