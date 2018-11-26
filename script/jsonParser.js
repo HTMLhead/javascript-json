@@ -9,7 +9,7 @@ const print = function printJSONData(JSONData) {
     console.log(JSON.stringify(JSONData, null, 2))
 }
 
-const errorCheck = new ErrorCheck(sentence)
+const errorCheck = new ErrorCheck
 const tokenizer = new Tokenizer(sentence)
 const tokenizerdDataArr = tokenizer.getWholeDataQueue(sentence)
 if (errorCheck.checkAllData(tokenizerdDataArr)) {
