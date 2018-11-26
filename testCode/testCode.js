@@ -234,11 +234,8 @@ test('문장을 토큰화해서 배열에 집에 넣음.', function() {
     const data = '[11,22,{a:11},33]'
     const arrayData = tokenize.getWholeDataQueue(data)
     const expectData = ['[','11',',','22',',','{','a:','11','}',',','33',']']
-    let result = true
-    arrayData.forEach((v, i) => {
-        if(v !== expectData[i]) {
-            result = false
-        }
+    const result = arrayData.every((v, i) => {
+        return expectData[i] === v
     })
     return expect(true).toBe(result)
 })

@@ -110,13 +110,13 @@ class ErrorCheck {
         while (true) {
             let innerToken = wholeDataQueue.shift()
             this.shiftArrayValue(innerToken, wholeDataQueue)
+            if (innerToken === '}') break;
             if (innerToken.indexOf(':') !== -1) colonArr.push(':')
             if (innerToken === ',' && colonArr.length === 0) {
                 this.printErrorMessage('object')
                 return false
             }
             if (innerToken === ',') colonArr.pop()
-            if (innerToken === '}') break;
         }
         if (colonArr.length !== 1) {
             this.printErrorMessage('object')
